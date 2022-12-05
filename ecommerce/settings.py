@@ -105,8 +105,8 @@ DATABASES = {
 
 #AWS S3: The are other ways to connect to s3 like enviornmental variables and you
 # need to use them: https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html
-AWS_S3_ACCESS_KEY_ID = 'AKIAURCWQF5QNUJAMM4F'
-AWS_S3_SECRET_ACCESS_KEY = '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'
+AWS_S3_ACCESS_KEY_ID = ''
+AWS_S3_SECRET_ACCESS_KEY = ''
 AWS_STORAGE_BUCKET_NAME = 'samyarsworld-ecommerce'
 
 # Uncomment to use S3
