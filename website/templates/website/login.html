@@ -1,0 +1,40 @@
+{% extends 'website/layout_auth.html' %}
+
+{% block body %}
+<div class="row" style="height: 50px;">
+
+</div>
+
+<div class="row">
+  <div class="col-6 col-lg-4" style="background-color: #FFDE03; margin: auto;">
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" class="form-control" name="username" id="username">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" name="password" id="password">
+        </div>
+        <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" id="signedin">
+          <label class="form-check-label" for="signedin">Keep me signed in</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+    {% for message in messages %}
+				<p class="mt-2" style="color: red;" id="messages">!{{message}}</p>
+		{% endfor %}
+    <small class="form-text text-muted">If you don't have an account <a href="{% url 'register' %}"> register.</a></small>
+    <small class="form-text text-muted">Forgot password? <a href="{% url 'password_reset' %}">Reset password.</a></small>
+
+  </div>
+</div>
+
+
+
+
+
+
+{% endblock %}

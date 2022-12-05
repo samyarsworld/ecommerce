@@ -1,0 +1,24 @@
+{%  extends 'website/layout_main.html' %}
+{% load static %}
+{% block content %}
+
+<br>
+<div class="row">
+    <div class="col-md-6">
+        <div class="card card-body">
+            <p>Are you sure you want to remove "{{item}}"</p>   
+
+            <form action="" method="POST">
+                <a type="button" class="btn btn-warning" href="{% url 'home' %}">Cancel</a>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input  class="btn btn-danger" type="submit" value="Confrim">
+            
+            </form>
+        
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}
