@@ -11,7 +11,7 @@ from .filters import OrderFilter
 from .decorators import unauthenticated_user, allowed_users, admin_only
 
 from .models import *
-from .forms import OrderForm, CutomerForm
+from .forms import OrderForm, CutomerForm, ProductForm
 
 @login_required(login_url='login')
 @admin_only
@@ -56,8 +56,17 @@ def userPage(request):
 @login_required(login_url='login')
 @admin_only
 def products(request):
+
+    form = ProductForm()
+    if request.method == 'POST':
+        form = ProductForm(request.POST)
+        form.save()
+        return redirect(reverse('products'))
+
+
     context = {
-        'products': Product.objects.all()
+        'products': Product.objects.all(),
+        'form': form
     }
     return render(request, 'website/products.html', context)
 

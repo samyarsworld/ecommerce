@@ -28,7 +28,29 @@
 				</table>
 			</div>
 		</div>
-		
 	</div>
+
+	<br>
+
+	<div class="row">
+		<div class="col-md">
+			<div class="card card-body">
+				<h5>Add Product</h5>
+			</div>
+			<div class="card card-body">
+            
+				<form action="" method="POST">
+					{% csrf_token %}
+					{{form.as_p}}
+	
+					<input class="btn btn-success" type="submit" value="Submit">
+				
+				</form>
+	
+			</div>
+		</div>
+	</div>
+
+
 
 {% endblock content %}
